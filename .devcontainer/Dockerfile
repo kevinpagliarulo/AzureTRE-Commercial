@@ -1,7 +1,7 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.166.1/containers/python-3/.devcontainer/base.Dockerfile
 
 # [Choice] Python version: 3, 3.9, 3.8, 3.7, 3.6
-ARG VARIANT="3.10"
+ARG VARIANT="3.8"
 FROM mcr.microsoft.com/vscode/devcontainers/python:dev-${VARIANT}-buster
 
 # This will be set to true when running in VSCode
@@ -24,7 +24,7 @@ ARG NODE_VERSION="lts/*"
 RUN su $USERNAME -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"
 
 # Install terraform
-ARG TERRAFORM_VERSION="1.3.7"
+ARG TERRAFORM_VERSION="1.3.2"
 COPY .devcontainer/scripts/terraform.sh /tmp/
 RUN bash /tmp/terraform.sh "${TERRAFORM_VERSION}" /usr/bin
 
@@ -71,7 +71,7 @@ RUN export PORTER_MIRROR=${PORTER_MIRROR} \
 ENV PATH ${PORTER_HOME}:$PATH
 
 # Install azure-cli
-ARG AZURE_CLI_VERSION=2.44.1-1~buster
+ARG AZURE_CLI_VERSION=2.37.0-1~buster
 COPY .devcontainer/scripts/azure-cli.sh /tmp/
 RUN export AZURE_CLI_VERSION=${AZURE_CLI_VERSION} \
     && /tmp/azure-cli.sh
