@@ -14,7 +14,7 @@ private.env
 /devops/auth.env
 
 # Config
-config.yaml
+#config.yaml
 
 # CNAB
 .cnab/
