@@ -4,10 +4,10 @@
 tre_id: kpagtresix
 location: eastus2
 management:
-  mgmt_resource_group_name: tre-rg-eu2
-  mgmt_storage_account_name: tresaeu2
+  mgmt_resource_group_name: tre-rg
+  mgmt_storage_account_name: trestgeu2
   terraform_state_container_name: tfstate
-  acr_name: treregistryeu2
+  acr_name: treacreu2
   # Azure Resource Manager credentials used for CI/CD pipelines
   arm_subscription_id: 4d64a3f2-671b-4192-8112-97df403d0ef4
   # If you want to override the currently signed in credentials
