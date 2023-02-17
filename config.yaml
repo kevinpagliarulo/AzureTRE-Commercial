@@ -1,15 +1,15 @@
 ---
 # After you have replaced all the __CHANGE_ME__ values in this file, you need to
 # run `make auth` to setup the Auth.
-tre_id: kpagtre001
+tre_id: kpagtre0001
 location: eastus2
 management:
   mgmt_resource_group_name: tre-rg
-  mgmt_storage_account_name: trestgeu2
+  mgmt_storage_account_name: kpagtrestg0001
   terraform_state_container_name: tfstate
-  acr_name: treacreu2
+  acr_name: kpagtreacr0001
   # Azure Resource Manager credentials used for CI/CD pipelines
-  arm_subscription_id: 4d64a3f2-671b-4192-8112-97df403d0ef4
+  arm_subscription_id: 588cd6df-202a-4e3c-a4c1-457ef004af7a
   # If you want to override the currently signed in credentials
   # You would do this if running commands like `make terraform-install DIR=./templates/workspaces/base`
   # arm_tenant_id: __CHANGE_ME__
@@ -24,13 +24,13 @@ tre:
   # address of the deploying machine.
   # public_deployment_ip_address: __CHANGE_ME__
   core_address_space: 10.0.0.0/22
-  tre_address_space: 10.1.0.0/22
-  core_app_service_plan_sku: P1v2
-  resource_processor_vmss_sku: Standard_B2s
+  tre_address_space: 10.1.0.0/23
+  core_app_service_plan_sku: S1
+  resource_processor_vmss_sku: Standard_D2as_v5
   enable_swagger: true
   enable_airlock_malware_scanning: false
   # TODO: move to RP default with https://github.com/microsoft/AzureTRE/issues/2948
-  workspace_app_service_plan_sku: P1v2
+  workspace_app_service_plan_sku: S1
   # The TRE Web UI is deployed by default.
   # Uncomment the following to disable deployment of the Web UI.
   # deploy_ui: false
@@ -44,14 +44,14 @@ authentication:
   # When this is false, the AAD Application will need creating manually.
   auto_workspace_app_registration: true
   # Setting AUTO_WORKSPACE_GROUP_CREATION to true will create an identity with `Group.ReadWrite.All`
-  auto_workspace_group_creation: false
-  application_admin_client_id: fdd6b685-160e-4934-b0da-7bfc0f8315a6
-  application_admin_client_secret: sMV8Q~aERrChnvwcPWyDSdesX_gLwVgnz8rUcaOB
-  test_account_client_id: 569f67c5-e55f-4650-9390-05518e428cbf
-  test_account_client_secret: 3vq8Q~4wEUliavbbspmDg3degUQIcOuoelgIIapf
-  api_client_id: c8343910-f2f9-4d9a-9bf0-295f5a606885
-  api_client_secret: Kak8Q~MHzVXnN4On2XCnhDKveKfvM.5o1Ve9icb8
-  swagger_ui_client_id: d086d338-de28-44c5-b42b-1afb85d8a932
+  auto_workspace_group_creation: true
+  application_admin_client_id: aec3e769-effa-4c80-a7bc-a92c86d2f928
+  application_admin_client_secret: jtp8Q~A~NZx7xGEoYC29Wq~-HUJKijuNhR0diaHW
+  test_account_client_id: 4f3ae438-0a02-4775-9650-b6d18916de8c
+  test_account_client_secret: sdn8Q~fpf-l1EBWx5C4PxXCju4ol95nUPZx7ccOg
+  api_client_id: 9031a4de-adf2-4ae5-8c84-d67a64c8c91f
+  api_client_secret: tmp8Q~0Sn18bCUbmLaHSUn3jI6iEi-Rb7A0t0a3q
+  swagger_ui_client_id: 0942c618-2f9b-4642-a667-cbb112917169
 resource_processor:
   # The number of processes to start in the resource processor VMSS image
   resource_processor_number_processes_per_instance: 5
